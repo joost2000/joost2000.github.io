@@ -2,30 +2,122 @@
 layout: compress
 ---
 
+
 <!DOCTYPE html>
 <html>
 
 <head>
     {% include head.html %}
 </head>
+<style>
+    .timeline {
+        position: relative;
+        max-width: 900px;
+        margin: 50px auto;
+    }
+
+    /* Vertical line */
+    .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 4px;
+        background: #333;
+        transform: translateX(-50%);
+    }
+
+    .ProjectContainer {
+        padding: 20px;
+        position: relative;
+        width: 50%;
+    }
+
+    /* Common content box */
+    .content {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        position: relative;
+    }
+
+    /* Left side */
+    .left {
+        left: 0%;
+        text-align: right;
+    }
+
+    .left .content {
+        margin-right: 40px;
+        /* spacing from the line */
+    }
+
+    /* Right side */
+    .right {
+        left: 50%;
+        text-align: left;
+    }
+
+    .right .content {
+        margin-left: 40px;
+    }
+
+    /* Responsive stacking */
+    @media screen and (max-width: 768px) {
+        .container {
+            width: 100%;
+            padding-left: 70px;
+            padding-right: 25px;
+        }
+
+        .container::before {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .left,
+        .right {
+            left: 0;
+            text-align: left;
+        }
+
+        .left .content,
+        .right .content {
+            margin: 0 auto 20px;
+        }
+    }
+</style>
 
 <body>
     {% include navbar.html %}
-
-    <!--Main Section-->
-    <section class="hero is-fullheight" id="project">
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <div class="section">
-                    <p class="subtitle is-uppercase has-text-weight-medium has-text-grey">Projects</p>
-                </div>
-                {% include project-card.html %}
+    <div class="timeline">
+        <div class="ProjectContainer left">
+            <div class="content">
+                <h3>Event One</h3>
+                <p>This is the first entry on the timeline, aligned to the left.</p>
             </div>
         </div>
-    </section>
+        <div class="ProjectContainer right">
+            <div class="content">
+                <h3>Event Two</h3>
+                <p>This is the second entry, aligned to the right.</p>
+            </div>
+        </div>
+        <div class="ProjectContainer left">
+            <div class="content">
+                <h3>Event Three</h3>
+                <p>Another entry aligned to the left.</p>
+            </div>
+        </div>
+        <div class="ProjectContainer right">
+            <div class="content">
+                <h3>Event Four</h3>
+                <p>And another one on the right.</p>
+            </div>
+        </div>
     </div>
-
-    <!--Footer-->
     {% include footer.html %}
 </body>
 
