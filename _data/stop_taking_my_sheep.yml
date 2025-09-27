@@ -1,0 +1,31 @@
+sections:
+  - title: "About Stop Taking My Sheep"
+    video: "assets/videos/StopTakingMySheep/ChoosingTask.mp4"
+    direction: "left"
+    content: |
+      Stop Taking My Sheep! is a fast-paced survival game where you must balance the responsibilities of shepherding with the demands of a mysterious, angry entity. As the player, you manage your flock and make difficult choices, including forging dark pacts, to continue doing what you love—being a shepherd.
+
+      We created this game as part of our own game jam, where it served as our team's submission. The project was a fun and creative challenge, allowing us to experiment with unique mechanics and storytelling in a short timeframe.
+
+  - title: "My Contribution"
+    video: "assets/videos/StopTakingMySheep/sheephearding.mp4"
+    direction: "right"
+    content: |
+      In this project I was resposible for the turn system that the game uses. The turn system is a core part of the gameplay, as it dictates how players interact with the game world and make decisions. 
+      I implemented a system where each action the player takes consumes a certain number of time, adding a layer of strategy to the game.
+
+      Additionally I worked on the AI behavior for all the creatures in the game, ensuring they react realistically to the player's actions and the environment. This involved programming movement patterns and interaction logic to create a dynamic and engaging experience.
+
+      Lastly I made a last minute effort to create a highscore system that tracks the player's performance based on how many days they survive, this highscores board is linked to the unity's gameplay analytics so you can compete against anyone who plays the game!
+
+  - title: "Collaberation"
+    content: |
+      This project was a collaborative effort with my teammate Cody.<br>
+      Cody was responsible for the task system, time system, shop system as well as all the art displayed in the game.
+
+      We worked closely together to ensure that all systems integrated seamlessly and contributed to a cohesive gameplay experience.
+      The collaboration allowed us to combine our strengths and create a game that was both fun and challenging, showcasing our ability to work effectively as a team.
+
+      You can find Cody's itch.io page [here](https://cody-bolleboom.itch.io/).
+
+      You can find the game on itch.io [here](https://cody-bolleboom.itch.io/stop-taking-my-sheep).

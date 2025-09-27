@@ -25,7 +25,7 @@
                     href="{% if page.layout == 'default' %}{{site.url}}{{site.baseurl}}/#{% else %}{{site.url}}{{site.baseurl}}/{% endif %}">Home</a>
                 <a class="navbar-item" href="{{site.url}}{{site.baseurl}}/#about">About</a>
                 <!-- <a class="navbar-item" href="{{site.url}}{{site.baseurl}}/#contact">CONTACT</a> -->
-                <a class="navbar-item" href="{{site.url}}{{site.baseurl}}/project">Projects</a>
+                {% include dropdown.html %}
                 <a class="navbar-item" href="{{site.url}}{{site.baseurl}}/CurriculumVitae">CV</a>
             </div>
 

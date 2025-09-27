@@ -15,3 +15,7 @@ sections:
       My main contribution to Airport Tycoon was designing and implementing a highly optimized pathfinding system for the game’s AI passengers. I used the A* (A-star) algorithm as the foundation, but to handle the large number of agents—sometimes over 500 moving simultaneously—I integrated Unity’s multithreaded job system. This allowed the pathfinding calculations to be distributed across multiple CPU cores, resulting in smooth and efficient movement even in crowded scenarios.
 
       In addition to the pathfinding, I also developed the queuing system used at check-in, security, and boarding gates, ensuring realistic and orderly passenger flow throughout the terminal. I’m proud to have tackled these technical challenges and delivered robust systems that are central to the gameplay experience.
+
+      If you want to have a look at pathfinding code that i wrote for this project [you can check it out here](https://github.com/HvA-Aviation/Airport-Tycoon/tree/development/Assets/Implementation/Pathfinding/Scripts).
+
+      If you want to have a look at the queueing code that i wrote for this project [you can check it out here](https://github.com/HvA-Aviation/Airport-Tycoon/blob/development/Assets/Features/Managers/QueueManager.cs).

@@ -36,6 +36,9 @@ header_image: assets\images\PlanetGeneration\image-248.png
       Your browser does not support the video tag.
     </video>
   {% endif %}
+  {% if section.image and (section.direction == "right" or section.direction == "left") %}
+    <img src="{{ section.image }}" alt="{{ section.title }}" width="{{section.image-width}}" style="border-radius: 8px; flex-shrink: 0; max-width: 100%; height: auto;">
+  {% endif %}
     <div>
       <h3>{{ section.title }}</h3>
       {{ section.content | markdownify }}

@@ -1,0 +1,35 @@
+sections:
+  - title: "Jigsaw Inventory Sytem"
+    image: "assets/images/InventorySystems/JigsawInventory.jpg"
+    image-width: "400"
+    direction: "right"
+    content: |
+      While working as a contractor for Games By Hyper, I was tasked with developing a jigsaw inventory system in Unreal Engine using Blueprints. This system builds on the existing Inventory System Advanced, but adapts its functionality to support a jigsaw-style grid. 
+      
+      My main responsibility was to modify and extend key functions so that items could be arranged in irregular, puzzle-like shapes rather than standard grid slots. The result is a flexible inventory system that allows for more dynamic item placement and management, tailored to the needs of the project.
+
+      If you are interested in learning more about these inventory systems or want to see them in action, you can find them on the following platforms:
+
+      [Games By Hyper Website - Jigsaw Inventory System](https://gamesbyhyper.com/product/jigsaw-inventory-system/)
+      
+      [Fab - Jigsaw Inventory System](https://www.fab.com/listings/86a1fce7-2019-4096-954c-49071274706e)
+
+
+  - title: "List Based Inventory System"
+    image: "assets/images/InventorySystems/ListBasedInventory.jpg"
+    image-width: "400"
+    direction: "left"
+    content: |
+      For Games By Hyper, I also developed a list based inventory system in Unreal Engine using Blueprints. This system provides a straightforward way to manage items in a linear list format, making it easy for players to view and organize their inventory.
+
+      My work involved designing and implementing the core logic for adding, removing, and sorting items within the list. I focused on creating a user-friendly interface and ensuring that the system could be easily integrated into different projects. The result is a reliable and efficient inventory solution that supports a wide range of gameplay scenarios.
+
+      [Games By Hyper Website - List Based Inventory System](https://gamesbyhyper.com/product/list-inventory-system/)
+
+      [Fab - List Based Inventory System](https://www.fab.com/listings/5635f78b-0e27-43d0-ab45-38f8e3ea5b32)
+
+
+
+  - title: "Disclaimer"
+    content: |
+      Please note that all rights to the inventory systems described above belong to Games By Hyper. As these systems were developed while I was working as a contractor, I do not claim ownership of the work. All content is shown here for portfolio purposes only, with full acknowledgment of Games By Hyper as the rights holder.

@@ -1,14 +1,28 @@
 sections:
   - title: "About Planet Generation/Terraforming"
     video: "/assets/videos/PlanetGeneration/PlanetGeneration.mp4"
-    direction: "below"
+    direction: "left"
     content: |
-      Planet Generation is a small project that I created in the last year of my study at the University Of Applied Sciences in Amsterdam.
-      The project focuses on the generation and deformation of planets using the marching cubes algorithm.
+      Planet Generation is a project I developed during my final year at the University of Applied Sciences in Amsterdam. The main objective was to explore procedural generation and real-time deformation of planetary bodies using advanced algorithms.
 
-  - title: "Technical Details"
+      This project leverages the marching cubes algorithm to create detailed, three-dimensional planets that can be dynamically shaped and modified. By simulating geological processes and allowing for interactive terraforming, the project demonstrates how procedural techniques can be used to generate complex, realistic environments in real time.
+
+      Overall, Planet Generation showcases my ability to apply computer graphics and algorithmic concepts to solve challenging problems in interactive media.
+
+  - title: "Motivation"
+    image: "assets/images/Marchingcubes-head.png"
+    image-width: "300"
     direction: "right"
     content: |
-      My main contribution to Airport Tycoon was designing and implementing a highly optimized pathfinding system for the game’s AI passengers. I used the A* (A-star) algorithm as the foundation, but to handle the large number of agents—sometimes over 500 moving simultaneously—I integrated Unity’s multithreaded job system. This allowed the pathfinding calculations to be distributed across multiple CPU cores, resulting in smooth and efficient movement even in crowded scenarios.
+     My motivation for this project was to deepen my understanding of advanced techniques in game development, particularly those involving procedural content and real-time graphics. I chose to implement the marching cubes algorithm because of its complexity and its wide range of applications.
 
-      In addition to the pathfinding, I also developed the queuing system used at check-in, security, and boarding gates, ensuring realistic and orderly passenger flow throughout the terminal. I’m proud to have tackled these technical challenges and delivered robust systems that are central to the gameplay experience.
+      Although the marching cubes algorithm was originally developed for medical imaging, it has proven to be highly effective for tasks such as terrain generation and 3D modeling. This versatility is what drew me to explore the technique further and apply it in a new context.
+
+      By working on this project, I aimed to challenge myself technically and creatively, while gaining practical experience with algorithms that are valuable in both academic and industry settings.
+  - title: "Implementation and paper"
+    content: |
+      I began by building a basic marching cubes implementation to generate 3D meshes from scalar fields. As I refined the project, I focused on optimizing performance and enabling real-time terraforming. 
+
+      For a deeper look at my optimization process and technical decisions, you can read my paper on the project:
+
+      [You can check it out by clicking on this link!](https://summit-2324-sem2.game-lab.nl/2024/02/28/planetary-terraforming/)
