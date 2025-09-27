@@ -1,0 +1,17 @@
+sections:
+  - title: "About Airport Architect"
+    video: "/assets/videos/AirportTycoon/BuildingTheGrid.mp4"
+    direction: "left"
+    content: |
+      **Airport Tycoon is a game about managing your own terminal!**  
+      In this game the player needs to manage the passenger flow of the terminal to keep it from overflowing, this can be achieved by placing check-in booths, security gates and boarding gates! Just a gate or booth will not suffice of course, you will need to construct the very best part about terminals... the queue!
+
+      Airport Tycoon was developed in collaboration with the aviation department of our university. Our goal was to raise awareness about the complex challenges and significant costs involved in running an airport terminal. By simulating real-world scenarios, the game helps players understand the decision-making, resource management, and operational difficulties that terminal owners face every day.
+
+  - title: "My Contribution to Airport Architect"
+    video: "/assets/videos/AirportTycoon/SlectingAndEditingQueues.mp4"
+    direction: "right"
+    content: |
+      My main contribution to Airport Tycoon was designing and implementing a highly optimized pathfinding system for the game’s AI passengers. I used the A* (A-star) algorithm as the foundation, but to handle the large number of agents—sometimes over 500 moving simultaneously—I integrated Unity’s multithreaded job system. This allowed the pathfinding calculations to be distributed across multiple CPU cores, resulting in smooth and efficient movement even in crowded scenarios.
+
+      In addition to the pathfinding, I also developed the queuing system used at check-in, security, and boarding gates, ensuring realistic and orderly passenger flow throughout the terminal. I’m proud to have tackled these technical challenges and delivered robust systems that are central to the gameplay experience.

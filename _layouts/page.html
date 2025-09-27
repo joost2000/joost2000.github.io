@@ -12,7 +12,8 @@ layout: compress
         <div class="hero-body">
             <div class="container has-text-centered" id="page-section">
                 <div class="section">
-                    <h1 class="title is-1 is-uppercase has-text-weight-bold">
+                    <img src="{{ page.header_image }}" alt="Header Image" class="header-image" />
+                    <h1 class="title is-1 is-uppercase has-text-weight-bold" style="position: relative; z-index: 2;">
                         {{page.title}}
                     </h1>
                     <hr class="has-background-black">
@@ -28,3 +29,34 @@ layout: compress
 </body>
 
 </html>
+
+<style>
+    .header-image {
+        max-width: 50%;
+        height: auto;
+        margin-bottom: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .header-background {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 6rem;
+        color: rgba(0, 0, 0, 0.07);
+        font-weight: bold;
+        letter-spacing: 0.2em;
+        z-index: 1;
+        pointer-events: none;
+        user-select: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    .title {
+        position: relative;
+        z-index: 2;
+    }
+</style>
