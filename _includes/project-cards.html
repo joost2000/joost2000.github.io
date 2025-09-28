@@ -1,0 +1,28 @@
+<style>
+  .project-card-img {
+    width: 100%;
+    height: 125px;
+    object-fit: cover;
+    object-position: center;
+    background: #f8f9fa;
+  }
+</style>
+<div class="container py-5">
+  <div class="row justify-content-center">
+    {% for project in site.data.projects %}
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 d-flex align-items-stretch">
+      <a href="{{ site.baseurl }}/{{ project.link }}" class="w-100 text-decoration-none" style="color: inherit;">
+        <div class="card h-100 shadow-sm">
+          {% if project.image %}
+          <img src="{{ project.image }}" class="card-img-top project-card-img" alt="{{ project.name }}">
+          {% endif %}
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title mb-2">{{ project.name }}</h5>
+            <p class="card-text flex-grow-1">{{ project.description | truncate: 80 }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>

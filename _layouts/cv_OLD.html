@@ -1,0 +1,383 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% include head.html %}
+
+<body>
+  {% include navbar.html %}
+  <section class="hero is-fullheight">
+    <div class="hero-body">
+      <div class="container has-text-centered" id="page-section">
+        <div class="section">
+          <h1 class="title is-1 is-uppercase has-text-weight-bold">
+            {{page.title}}
+          </h1>
+          <div class="content is-marginless">
+            <div class="cv-container" style="text-align:center; margin: 2em 0;">
+              <div class="cv-section">
+                <h2>Profile / Bio</h2>
+                <div class="cv-bio-block">
+                  <img class="cv-bio-image" src="{{ site.author-image }}" alt="{{ site.author-name }} profile photo" />
+                  <div class="cv-bio-text">
+                    {{ site.author-about }}
+                  </div>
+                </div>
+                <style>
+                  .cv-bio-block {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 2em;
+                    margin-bottom: 2em;
+                  }
+
+                  .cv-bio-image {
+                    width: 120px;
+                    height: 120px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+                  }
+
+                  .cv-bio-text {
+                    max-width: 500px;
+                    text-align: left;
+                    font-size: 1.15em;
+                  }
+                </style>
+              </div>
+              <div class="cv-section">
+                <h2>IT Work Experience</h2>
+                <div class="cv-cards-grid">
+                  {% for job in page.IT_work_experience %}
+                  <div class="cv-card playing-card">
+                    <div class="cv-card-image">
+                      {% if job.logo %}
+                      <img src="{{ job.logo }}" alt="{{ job.company }} logo" />
+                      {% else %}
+                      <div class="cv-card-placeholder">No Logo</div>
+                      {% endif %}
+                    </div>
+                    <button class="cv-card-header cv-modal-trigger" data-modal="work-modal-{{ forloop.index }}">
+                      <span class="cv-card-title">{{ job.company }}</span><br>
+                      <span class="cv-card-subtitle">{{ job.period }}</span>
+                    </button>
+                  </div>
+                  <!-- Modal for IT work experience -->
+                  <div id="work-modal-{{ forloop.index }}" class="cv-modal">
+                    <div class="cv-modal-content">
+                      <span class="cv-modal-close">&times;</span>
+                      <div class="cv-modal-header" style="display: flex; justify-content: center; align-items: center;">
+                        {% if job.logo %}
+                        <img class="cv-modal-logo" src="{{ job.logo }}" alt="{{ job.company }} logo" />
+                        {% endif %}
+                      </div>
+                      <h3>{{ job.company }}</h3>
+                      <strong>{{ job.position }}</strong><br><br>
+                      <span>{{ job.description }}</span>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+
+                <div class="cv-section">
+                  <h2>Other Work Experience</h2>
+                  <div class="cv-cards-grid">
+                    {% for job in page.work_experience %}
+                    <div class="cv-card playing-card">
+                      <div class="cv-card-image">
+                        {% if job.logo %}
+                        <img src="{{ job.logo }}" alt="{{ job.company }} logo" />
+                        {% else %}
+                        <div class="cv-card-placeholder">No Logo</div>
+                        {% endif %}
+                      </div>
+                      <button class="cv-card-header cv-modal-trigger" data-modal="other-work-modal-{{ forloop.index }}">
+                        <span class="cv-card-title">{{ job.company }}</span><br>
+                        <span class="cv-card-subtitle">{{ job.period }}</span>
+                      </button>
+                    </div>
+                    <!-- Modal for other work experience -->
+                    <div id="other-work-modal-{{ forloop.index }}" class="cv-modal">
+                      <div class="cv-modal-content">
+                        <span class="cv-modal-close">&times;</span>
+                        <div class="cv-modal-header"
+                          style="display: flex; justify-content: center; align-items: center;">
+                          {% if job.logo %}
+                          <img class="cv-modal-logo" src="{{ job.logo }}" alt="{{ job.company }} logo" />
+                          {% endif %}
+                        </div>
+                        <h3>{{ job.company }}</h3>
+                        <strong>{{ job.position }}</strong><br><br>
+                        <span>{{ job.description }}</span>
+                      </div>
+                    </div>
+                    {% endfor %}
+                  </div>
+                  <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                      var triggers = document.querySelectorAll('.cv-modal-trigger');
+                      var modals = document.querySelectorAll('.cv-modal');
+                      var closes = document.querySelectorAll('.cv-modal-close');
+                      triggers.forEach(function (trigger) {
+                        trigger.addEventListener('click', function () {
+                          var modalId = trigger.getAttribute('data-modal');
+                          document.getElementById(modalId).style.display = 'block';
+                        });
+                      });
+                      closes.forEach(function (closeBtn) {
+                        closeBtn.addEventListener('click', function () {
+                          closeBtn.closest('.cv-modal').style.display = 'none';
+                        });
+                      });
+                      window.addEventListener('click', function (event) {
+                        modals.forEach(function (modal) {
+                          if (event.target === modal) {
+                            modal.style.display = 'none';
+                          }
+                        });
+                      });
+                    });
+                  </script>
+                  <style>
+                    .cv-modal {
+                      display: none;
+                      position: fixed;
+                      z-index: 1000;
+                      left: 0;
+                      top: 0;
+                      width: 100vw;
+                      height: 100vh;
+                      overflow: auto;
+                      background-color: rgba(0, 0, 0, 0.4);
+                    }
+
+                    .cv-modal-content {
+                      background: #fff;
+                      margin: 10vh auto;
+                      padding: 2em;
+                      border-radius: 16px;
+                      max-width: 600px;
+                      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+                      position: relative;
+                    }
+
+                    .cv-modal-close {
+                      position: absolute;
+                      top: 1em;
+                      right: 1em;
+                      font-size: 2em;
+                      color: #aaa;
+                      cursor: pointer;
+                      transition: color 0.2s;
+                    }
+
+                    .cv-modal-close:hover {
+                      color: #0077b5;
+                    }
+
+                    .cv-modal-header {
+                      display: flex;
+                      align-items: center;
+                      gap: 1em;
+                      margin-bottom: 1em;
+                    }
+
+                    .cv-modal-logo {
+                      width: 80px;
+                      height: 80px;
+                      object-fit: contain;
+                      border-radius: 16px;
+                      background: #f9f9f9;
+                      display: block;
+                      margin: 0 auto;
+                    }
+                  </style>
+                  <style>
+                    .cv-cards-grid {
+                      display: grid;
+                      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                      gap: 2em;
+                      margin: 0 auto 2em auto;
+                      max-width: 900px;
+                    }
+
+                    .cv-card.playing-card {
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                      border: 2px solid #e2e2e2;
+                      border-radius: 16px;
+                      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+                      background: #fff;
+                      padding: 1em 0 0.5em 0;
+                      transition: box-shadow 0.2s;
+                    }
+
+                    .cv-card-image {
+                      width: 80px;
+                      height: 80px;
+                      margin-bottom: 1em;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    }
+
+                    .cv-card-image img {
+                      max-width: 100%;
+                      max-height: 100%;
+                      border-radius: 12px;
+                      background: #f9f9f9;
+                    }
+
+                    .cv-card-placeholder {
+                      width: 80px;
+                      height: 80px;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      background: #eee;
+                      color: #aaa;
+                      border-radius: 12px;
+                      font-size: 0.9em;
+                    }
+
+                    .cv-card-header {
+                      width: 100%;
+                      background: #f7f7f7;
+                      border: none;
+                      outline: none;
+                      padding: 0.7em 1em;
+                      font-size: 1.2em;
+                      text-align: center;
+                      cursor: pointer;
+                      border-radius: 8px 8px 0 0;
+                      font-weight: bold;
+                    }
+
+                    .cv-card-title {
+                      font-size: 1.1em;
+                      font-weight: bold;
+                    }
+
+                    .cv-card-subtitle {
+                      font-size: 0.8em;
+                      font-weight: bold;
+                    }
+
+                    .cv-card-body {
+                      padding: 1em;
+                      border-top: 1px solid #eee;
+                      text-align: left;
+                      width: 100%;
+                      max-height: 0;
+                      overflow: hidden;
+                      opacity: 0;
+                      transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s;
+                    }
+
+                    .cv-card-body.expanded {
+                      max-height: 400px;
+                      opacity: 1;
+                    }
+                  </style>
+                </div>
+                <div class="cv-section">
+                  <h2>Studies</h2>
+                  <div class="cv-cards-grid">
+                    {% for study in page.studies %}
+                    <div class="cv-card playing-card">
+                      <div class="cv-card-image">
+                        {% if study.logo %}
+                        <img src="{{ study.logo }}" alt="{{ study.institution }} logo" />
+                        {% else %}
+                        <div class="cv-card-placeholder">No Logo</div>
+                        {% endif %}
+                      </div>
+                      <button class="cv-card-header cv-modal-trigger" data-modal="study-modal-{{ forloop.index }}">
+                        <span class="cv-card-title">{{ study.institution }}</span><br>
+                        <span class="cv-card-subtitle">{{ study.period }}</span>
+                      </button>
+                    </div>
+                    <!-- Modal for studies -->
+                    <div id="study-modal-{{ forloop.index }}" class="cv-modal">
+                      <div class="cv-modal-content">
+                        <span class="cv-modal-close">&times;</span>
+                        <div class="cv-modal-header"
+                          style="display: flex; justify-content: center; align-items: center;">
+                          {% if study.logo %}
+                          <img class="cv-modal-logo" src="{{ study.logo }}" alt="{{ study.institution }} logo" />
+                          {% endif %}
+                        </div>
+                        <h3>{{ study.institution }}</h3>
+                        <strong>{{ study.degree }}</strong> ({{ study.period }})<br><br>
+                        <span>{{ study.description }}</span>
+                      </div>
+                    </div>
+                    {% endfor %}
+                  </div>
+                </div>
+                <div class="cv-section">
+                  <h2>Personal Information</h2>
+                  <div class="cv-personal-info-simple">
+                    <span class="cv-info-btn"><i class="fa fa-phone"></i> {{ page.phone }}</span>
+                    <span class="cv-info-btn"><i class="fa fa-home"></i> {{ page.residence }}</span>
+                    <span class="cv-info-btn"><i class="fa fa-cake-candles"></i> {{ page.birthdate }}</span>
+                    <a class="cv-info-btn cv-info-link" href="mailto:{{ page.email }}" title="Email {{ page.email }}"><i
+                        class="fa fa-envelope"></i> {{ page.email }}</a>
+                    <a class="cv-info-btn cv-info-link" href="https://www.linkedin.com/in/joost-ottens/" target="_blank"
+                      rel="noopener" title="LinkedIn Profile"><i class="fa fa-linkedin"></i> Joost Ottens</a>
+                  </div>
+                  <style>
+                    .cv-personal-info-simple {
+                      display: flex;
+                      flex-wrap: wrap;
+                      gap: 1em;
+                      justify-content: center;
+                      margin-top: 1em;
+                    }
+
+                    .cv-info-btn {
+                      display: inline-flex;
+                      align-items: center;
+                      font-size: 1.1em;
+                      border: none;
+                      background: none;
+                      padding: 0.5em 1em;
+                      border-radius: 6px;
+                      cursor: pointer;
+                      text-decoration: none;
+                      transition: background 0.2s, color 0.2s;
+                    }
+
+                    .cv-info-btn i {
+                      margin-right: 0.5em;
+                    }
+
+                    .cv-info-link {
+                      color: #111;
+                    }
+
+                    .cv-info-link:hover,
+                    .cv-info-link:focus {
+                      background: #f0f8ff;
+                      color: #0077b5;
+                      text-decoration: underline;
+                    }
+                  </style>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+  <!--Footer begins here-->
+  {% include footer.html %}
+</body>
+
+</html>
