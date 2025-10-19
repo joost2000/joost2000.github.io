@@ -8,7 +8,7 @@ sections:
       We created this game as part of our own game jam, where it served as our team's submission. The project was a fun and creative challenge, allowing us to experiment with unique mechanics and storytelling in a short timeframe.
 
   - title: "My Contribution"
-    video: "assets/videos/StopTakingMySheep/sheephearding.mp4"
+    video: "assets/videos/StopTakingMySheep/SheepHearding.mp4"
     direction: "right"
     content: |
       In this project I was resposible for the turn system that the game uses. The turn system is a core part of the gameplay, as it dictates how players interact with the game world and make decisions. 
